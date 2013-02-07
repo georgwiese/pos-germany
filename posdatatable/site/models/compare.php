@@ -6,9 +6,9 @@
 	jimport('joomla.application.component.modellist');
 	require_once("compare/SummaryTable.php");
 	/**
-	 * HelloWorld Model
+	 * Compare model of PosDataTable component
 	 */
-	class PosDataTableModelCompare extends JModelList {
+	class PosDataTableModelCompare extends JModel {
 
 		private $isMultiYear;
 
