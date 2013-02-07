@@ -1,7 +1,5 @@
 <?php
-	// No direct access to this file
-	defined('_JEXEC') or die('Restricted access');
-
+defined('_JEXEC') or die;
 require("ExcelParser.php");
 require_once(JPATH_COMPONENT_SITE . '/helpers/ConfigurationHelper.php');
 

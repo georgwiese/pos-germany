@@ -7,7 +7,7 @@
 	require_once(JPATH_COMPONENT_SITE . '/models/results/CartDao.php');
 
 	/**
-	 * Stat model of PosShop component
+	 * HelloWorld Model
 	 */
 	class PosShopModelStat extends JModel {
 

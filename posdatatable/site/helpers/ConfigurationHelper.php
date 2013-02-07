@@ -36,12 +36,6 @@
 			return $params->get("quadrant".($index + 1)."Title");
 		}
 
-		public static function getQuadrantMenuType($index) {
-			$params = JComponentHelper::getParams("com_posdatatable");
-			$menuType = $params->get("quadrant".($index + 1)."Menu");
-			return $menuType != null ? $menuType : "quadrant".($index + 1);
-		}
-
 		public static function useFirstLanguage() {
 			$params = JComponentHelper::getParams("com_posdatatable");
 			return !$params->get("useSecondLanguage");

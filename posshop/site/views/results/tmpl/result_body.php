@@ -48,7 +48,7 @@
 
                                                             <div style="text-align: center;">
                                                                 <iframe frameborder=0
-                                                                        width='952px'
+                                                                        width='702px'
                                                                         height='332px'
                                                                         marginheight='1px'
                                                                         marginwidth='1px'

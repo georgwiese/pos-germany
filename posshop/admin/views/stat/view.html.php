@@ -6,13 +6,17 @@
 	jimport('joomla.application.component.view');
 
 	/**
-	 * Stat view of PosShop component
+	 * HelloWorlds View
 	 */
 	class PosShopViewStat extends JView {
 
 		private $results;
 		private $total;
 
+		/**
+		 * HelloWorlds view display method
+		 * @return void
+		 */
 		function display($tpl = null) {
 			$this->populate($this->getModel());
 			parent::display($tpl);

@@ -7,7 +7,7 @@
 	require_once('import/ShopTableDao.php');
 
 	/**
-	 * Config model of PosShop component
+	 * HelloWorld Model
 	 */
 	class PosShopModelConfig extends JModelAdmin {
 
