@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>mod_posdailynumber</name>
+	<author>Martin Maliska</author>
+	<creationDate>October 2012</creationDate>
+	<authorEmail>martin.maliska@gmail.com</authorEmail>
+	<version>0.0.2</version>
+	<description>PoS Number Of The Day</description>
+	<files>
+		<filename module="mod_posdailynumber">mod_posdailynumber.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_posdailynumber.xml</filename>
+	</files>
+    <media destination="mod_posdailynumber" folder="media">
+        <folder>images</folder>
+        <filename>index.html</filename>
+    </media>
+	<languages>
+		<language tag="en-GB">en-GB.mod_posdailynumber.ini</language>
+		<language tag="ka-GE">ka-GE.mod_posdailynumber.ini</language>
+		<language tag="en-GB">en-GB.mod_posdailynumber.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_POSDAILYNUMBER" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="false"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_POSDAILYNUMBER_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
