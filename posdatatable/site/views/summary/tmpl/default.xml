@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_POSDATATABLE_SUMMARY_VIEW_DEFAULT_TITLE">
+        <message>COM_POSDATATABLE_SUMMARY_VIEW_DEFAULT_DESC</message>
+    </layout>
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_posdatatable/models/fields">
+            <field name="id" type="tablename" label="COM_POSDATATABLE_MENU_FIELD_TABLE_LABEL" description="COM_POSDATATABLE_MENU_FIELD_TABLE_DESC"
+                    />
+        </fieldset>
+    </fields>
+</metadata>
+
