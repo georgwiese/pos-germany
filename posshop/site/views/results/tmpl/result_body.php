@@ -1,3 +1,8 @@
+<ul id="main-tables-years">
+    <li style="width: 200px"><a
+            href="<?php echo JURI::root(true)?>"><?php echo JText::_("COM_POSSHOP_BACK_TO_THE_MAIN")?></a></li>
+    <div class="cb">&nbsp;</div>
+</ul>
 <div id="main-tables">
     <div class="textual">
         <div class="padding-10">
@@ -27,7 +32,7 @@
                                                             <div style="text-align: center;"><?php echo JText::sprintf('COM_POSSHOP_PER_CAPTIVA_TAX', $perCaptivaTax, $currentPerCaptivaTax); ?></div>
                                                             <br>
 
-                                                            <div style="text-align: center;"><?php echo JText::sprintf(($cheaperThan > 0) ? 'COM_POSSHOP_CHEAPER_THAN' : 'COM_POSSHOP_MORE_EXPENSIVE', $cheaperThanFormatted); ?></div>
+                                                            <div style="text-align: center;"><?php echo JText::sprintf(($cheaperThan > 0) ? 'COM_POSSHOP_CHEAPER_THAN' : 'COM_POSSHOP_MORE_EXPENSIVE', abs($cheaperThan)); ?></div>
                                                             <br>
 
                                                             <div style="text-align: center;"><?php echo JText::sprintf(($cheaperThan > 0) ? 'COM_POSSHOP_YOU_SAVE' : 'COM_POSSHOP_YOU_INCREASE_COSTS', $savePerResident, $savePerWorking); ?></div>

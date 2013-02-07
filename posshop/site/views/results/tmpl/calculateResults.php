@@ -7,11 +7,9 @@
 	$currentStateInEur = $constants[CartDao::TOTAL_EXPEDITURES]->value;
 	$currentPerCaptivaTax = number_format($constants[CartDao::PER_CAPTIVA_TAX]->value, 0, ',', ' ');;
 	$yourState = $this->getSum()/1000;
-	$yourStateRounded = number_format($yourState, 2, ',', ' ');
+	$yourStateRounded = round($this->getSum()/1000, 2);
 	$perCaptivaTax = number_format(round(($yourState * 1000000000) / $residentCount, 0), 0, ',', ' ');
-	$cheaperThan = number_format(round(($currentStateInEur - ($yourState * 1000000000)) / 1000000000, 2), 2, ',', ' ');
-	$cheaperThanTotal = number_format($currentStateInEur - ($yourState * 1000000000), 2, ',', ' ');
-	$cheaperThanFormatted = number_format(abs(($currentStateInEur - ($yourState * 1000000000)) / 1000000000), 2, ',', ' ');
+	$cheaperThan = round(($currentStateInEur - ($yourState * 1000000000)) / 1000000000, 2);
 	$cheaperThanRounded = abs(round($currentStateInEur - ($yourState * 1000000000), 0));
 	$savePerResident = number_format(round(($cheaperThanRounded / $residentCount) - 0.5, 0), 0, ',', ' ');
 	$savePerWorking = number_format(round(($cheaperThanRounded / $workingPersonCount) - 0.8, 0), 0, ',', ' ');

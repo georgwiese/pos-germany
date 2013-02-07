@@ -78,7 +78,7 @@ body {
 }
 
 #mainmenu ul li a span.text-menuitem {
-    margin-top: 0px;
+    margin-top: 3px;
 }
 
 #mainmenu ul li a span {
@@ -555,11 +555,6 @@ table.main-table td.main {
 table.main-table tr.header th {
     font-size:          10px;
     text-align:         right;
-}
-
-table.main-table tr.header th.centerize {
-    font-size:          10px;
-    text-align:         center;
 }
 
 #partners {
