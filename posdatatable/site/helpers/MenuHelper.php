@@ -8,8 +8,6 @@
 
 		const YEAR_MENU_TYPE = "year-menu";
 
-		const NOT_FOUND = "NOT FOUND";
-
 		public static function printTableMenu(JMenu $menu, $selectedYear, $selectedItemAlias) {
 			$selectedItem = $menu->getItems("alias", $selectedItemAlias);
 			$menuItems = $menu->getItems('menutype', $selectedItem[0]->menutype);
@@ -90,48 +88,34 @@
 
 		public static function printYearMenu(JMenu $menu, $selectedYear, $selectedItem = null, $table = null, $row = null) {
 			$menuItems = $menu->getItems('menutype', self::YEAR_MENU_TYPE);
-			if (sizeof($menuItems) > 0) {
-				echo "<ul id='main-tables-years'>";
-				foreach ($menuItems as $menuItem) {
-					if (isset($selectedItem)) {
-						if (isset($row) && isset($table)) {
-							$itemLink = NavigationHelper::routeCompareView($selectedItem, $menuItem->title, $table, $row);
-						} else {
-							$itemLink = NavigationHelper::routeTableView($selectedItem, $menuItem->title);
-						}
+			echo "<ul id='main-tables-years'>";
+			foreach ($menuItems as $menuItem) {
+				if (isset($selectedItem)) {
+					if (isset($row) && isset($table)) {
+						$itemLink = NavigationHelper::routeCompareView($selectedItem, $menuItem->title, $table, $row);
 					} else {
-						$itemLink = NavigationHelper::routeSummaryView($menuItem->title);
+						$itemLink = NavigationHelper::routeTableView($selectedItem, $menuItem->title);
 					}
-
-					echo "<li><a href='" . $itemLink . "'";
-					echo ($menuItem->title != $selectedYear) ? "" : "class='selected'";
-					echo ">$menuItem->title</a></li>";
+				} else {
+					$itemLink = NavigationHelper::routeSummaryView($menuItem->title);
 				}
-				echo "<div class='cb'>&nbsp;</div>";
-				echo "</ul>";
-			} else {
-				echo "<span style='color:red; font-weight: bold; font-size: 20px;'>ERROR: Menu type '" . self::YEAR_MENU_TYPE . "' does not exist! Check you configuration and read the manual! </span>";
+
+				echo "<li><a href='" . $itemLink . "'";
+				echo ($menuItem->title != $selectedYear) ? "" : "class='selected'";
+				echo ">$menuItem->title</a></li>";
 			}
+			echo "<div class='cb'>&nbsp;</div>";
+			echo "</ul>";
 		}
 
 		public static function findFirstDisplayableItem($menuType) {
 			$menuItems = JFactory::getApplication()->getMenu()->getItems('menutype', $menuType);
-			if (sizeof($menuItems) > 0) {
-				$index = 0;
-				$menuItemCount = sizeof($menuItems);
-				while (($index < $menuItemCount) && (($menuItems[$index]->type != "component") || ($menuItems[$index]->component != "com_posdatatable"))) {
-					$index++;
-				}
-				if ((isset($menuItems[$index])) && ($menuItems[$index]->component == "com_posdatatable") && ($menuItems[$index]->type == "component")) {
-					return $menuItems[$index]->alias ;
-				} else {
-					echo "<span style='color:red; font-weight: bold; font-size: 20px;'>ERROR: Menu type '" . $menuType . "' does not contain any Pos Data Table menu item! Check you configuration and read the manual! </span>";
-					return self::NOT_FOUND;
-				}
-			} else {
-				echo "<span style='color:red; font-weight: bold; font-size: 20px;'>ERROR: Menu type '" . $menuType . "' does not exist or is empty! Check you configuration and read the manual! </span>";
+			$index = 0;
+			$menuItemCount = sizeof($menuItems);
+			while (($index < $menuItemCount) && (($menuItems[$index]->type != "component") || ($menuItems[$index]->component != "com_posdatatable"))) {
+				$index ++;
 			}
-			return self::NOT_FOUND;
+			return (($menuItems[$index]->component == "com_posdatatable") && ($menuItems[$index]->type == "component")) ? $menuItems[$index]->alias : "NOT FOUND";
 		}
 
 		public static function getQuadrant($currentItemAlias) {

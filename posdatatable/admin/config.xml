@@ -17,7 +17,6 @@
 
         <field name="quadrant1TableName" type="tablename" label="COM_POSDATATABLE_QUADRANT_TABLE_LABEL"/>
         <field name="quadrant1Title" type="text" default="How much public sector spends?" label="COM_POSDATATABLE_QUADRANT_TITLE_LABEL"/>
-        <field name="quadrant1Menu" type="text" default="quadrant1" label="COM_POSDATATABLE_QUADRANT_MENU_LABEL"/>
     </fieldset>
     <fieldset name="quadrant2" addfieldpath="/administrator/components/com_posdatatable/models/fields"
               label="COM_POSDATATABLE_QUADRANT2_SETTINGS_LABEL">
@@ -29,7 +28,6 @@
 
         <field name="quadrant2TableName" type="tablename" label="COM_POSDATATABLE_QUADRANT_TABLE_LABEL"/>
         <field name="quadrant2Title" type="text" default="How much public sector collects?" label="COM_POSDATATABLE_QUADRANT_TITLE_LABEL"/>
-        <field name="quadrant2Menu" type="text" default="quadrant2" label="COM_POSDATATABLE_QUADRANT_MENU_LABEL"/>
     </fieldset>
     <fieldset name="quadrant3" addfieldpath="/administrator/components/com_posdatatable/models/fields"
               label="COM_POSDATATABLE_QUADRANT3_SETTINGS_LABEL">
@@ -41,7 +39,6 @@
 
         <field name="quadrant3TableName" type="tablename" label="COM_POSDATATABLE_QUADRANT_TABLE_LABEL"/>
         <field name="quadrant3Title" type="text" default="The Universe of Public Expenditures" label="COM_POSDATATABLE_QUADRANT_TITLE_LABEL"/>
-        <field name="quadrant3Menu" type="text" default="quadrant3" label="COM_POSDATATABLE_QUADRANT_MENU_LABEL"/>
     </fieldset>
     <fieldset name="quadrant4" addfieldpath="/administrator/components/com_posdatatable/models/fields"
               label="COM_POSDATATABLE_QUADRANT4_SETTINGS_LABEL">
@@ -53,6 +50,5 @@
 
         <field name="quadrant4TableName" type="tablename" label="COM_POSDATATABLE_QUADRANT_TABLE_LABEL"/>
         <field name="quadrant4Title" type="text" default="How much we owe?" label="COM_POSDATATABLE_QUADRANT_TITLE_LABEL"/>
-        <field name="quadrant4Menu" type="text" default="quadrant4" label="COM_POSDATATABLE_QUADRANT_MENU_LABEL"/>
     </fieldset>
 </config>

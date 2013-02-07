@@ -1,7 +1,4 @@
 <?php
-	// No direct access to this file
-	defined('_JEXEC') or die('Restricted access');
-
 	require_once("AbstractDao.php");
 	/**
 	 * Created by JetBrains PhpStorm.

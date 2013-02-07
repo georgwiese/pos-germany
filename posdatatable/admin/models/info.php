@@ -20,7 +20,7 @@
 		 * @return    void
 		 * @since    1.6
 		 */
-		protected function populateState($ordering = null, $direction = null) {
+		protected function populateState() {
 			if (JRequest::getString("tableWithYear") != "") {
 				$tableWithYear = explode("|", JRequest::getString("tableWithYear"));
 			} else {

@@ -78,16 +78,14 @@ body {
 }
 
 #mainmenu ul li a span.text-menuitem {
-    /*margin-top: 0px;*/
+    margin-top: 0px;
 }
 
 #mainmenu ul li a span {
     display:            block;
     margin-left: 4px;
     margin-right: 4px;
-    /*padding-top: 3px;*/
-    line-height: 30px;
-    vertical-align: middle;
+    padding-top: 3px;
 }
 
 #mainmenu ul li.cyan a {

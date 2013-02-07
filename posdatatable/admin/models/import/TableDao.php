@@ -1,7 +1,4 @@
 <?php
-	// No direct access to this file
-	defined('_JEXEC') or die('Restricted access');
-
 	require_once("AbstractDao.php");
 	/**
 	 * Created by JetBrains PhpStorm.
@@ -23,9 +20,9 @@
 			$innerQuery = $db->getQuery(true);
 			$innerQuery->select("table_id");
 			$innerQuery->from("#__pos_data_table_info");
-			$innerQuery->where("name = ". $db->quote($db->escape($table->getName())));
+			$innerQuery->where("name = ". $db->quote($table->getName()));
 			if ($table->getYear() != null) {
-				$innerQuery->where("year = " . ((int) $table->getYear()));
+				$innerQuery->where("year = " . $table->getYear());
 			}
 
 			$query->delete("#__pos_data_table");
@@ -37,9 +34,9 @@
 
 			$query->clear();
 			$query->delete("#__pos_data_table_info");
-			$query->where("name = " . $db->quote($db->escape($table->getName())));
+			$query->where("name = " . $db->quote($table->getName()));
 			if ($table->getYear() != null) {
-				$query->where("year = " . ((int) $table->getYear()));
+				$query->where("year = " . $table->getYear());
 			}
 			$db->setQuery($query);
 			if (!$db->query()) {
@@ -51,8 +48,8 @@
 			$query = $db->getQuery(true);
 			$query->insert("#__pos_data_table_info");
 			$query->columns(array("name", "year", "x1_axis", "x2_axis", "round", "yearly_change"));
-			$query->values($db->quote($table->getName()).", ". ((int) $table->getYear()).", ". ((int) $table->getX1AxisColumnIndex()).", "
-				.((int) $table->getX2AxisColumnIndex()).", ". $db->quote(implode("|", $table->getRound())."|"). ", ". ((int) $table->getAnnualChangeColumnIndex()));
+			$query->values($db->quote($table->getName()).", ".$table->getYear().", ".$table->getX1AxisColumnIndex().", "
+				.$table->getX2AxisColumnIndex().", ". $db->quote(implode("|", $table->getRound())."|"). ", ".$table->getAnnualChangeColumnIndex());
 			$db->setQuery($query);
 			if (!$db->query()) {
 				JError::raiseError(500, $db->getErrorMsg());
@@ -65,6 +62,19 @@
 				$row->setTableId($table->getId());
 				$rowDao->save($row);
 			}
+		}
+
+		public function getTableList() {
+			$sql = "SELECT CONCAT(name, '- ', (CASE WHEN year > 0 THEN year ELSE 'multiyear' END)) FROM j_pos_data_table_info GROUP BY name, year ORDER BY name, year";
+			$result = mysql_query($sql, $this->getConnection());
+			if (!$result) {
+				die('Invalid query: ' . mysql_error().'\n'.$sql);
+			}
+			$tables = array();
+			while ($table = mysql_fetch_array($result)) {
+				array_push($tables, $table[0]);
+			}
+			return $tables;
 		}
 
 		public function clearDb() {

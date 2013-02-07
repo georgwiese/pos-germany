@@ -3,14 +3,14 @@
 	defined('_JEXEC') or die('Restricted access');
 
 	// import Joomla modelitem library
-	jimport('joomla.application.component.model');
+	jimport('joomla.application.component.modellist');
 
 	require_once(JPATH_COMPONENT_SITE . '/models/cart/ShopDao.php');
 
 	/**
-	 * Cart model of of PosShop component
+	 * HelloWorld Model
 	 */
-	class PosShopModelCart extends JModel {
+	class PosShopModelCart extends JModelList {
 
 		/**
 		 * Method to auto-populate the model state.

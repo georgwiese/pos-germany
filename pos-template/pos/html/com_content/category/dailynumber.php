@@ -11,11 +11,6 @@
 	$showImages = false;
 ?>
 <div id="main-tables-wrapper">
-    <ul id="main-tables-years">
-        <li style="width: 200px"><a href="<?php echo JURI::root(true)."/"; ?>"><?php echo JText::_("TPL_POS_BACK_TO_MAIN");?></a></li>
-        <li style="background-image:none; width: 460px"></li>
-        <div class="cb">&nbsp;</div>
-    </ul>
     <div id="main-tables">
         <div class="textual">
             <div class="padding-10">

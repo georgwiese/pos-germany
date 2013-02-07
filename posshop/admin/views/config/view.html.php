@@ -8,7 +8,7 @@
 	JFormHelper::loadFieldClass('media');
 
 	/**
-	 * Config view of PosShop component
+	 * HelloWorlds View
 	 */
 	class PosShopViewConfig extends JView {
 
@@ -16,8 +16,13 @@
 		private $tableNames;
 		private $form;
 
+		/**
+		 * HelloWorlds view display method
+		 * @return void
+		 */
 		function display($tpl = null) {
 			$this->populate($this->getModel());
+			//JToolBarHelper::preferences('com_posshop');
 			parent::display($tpl);
 		}
 

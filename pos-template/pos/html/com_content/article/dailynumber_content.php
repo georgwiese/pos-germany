@@ -1,4 +1,10 @@
 <?php
+	/**
+	 * @package        Joomla.Site
+	 * @subpackage    com_content
+	 * @copyright    Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+	 * @license        GNU General Public License version 2 or later; see LICENSE.txt
+	 */
 
 // no direct access
 	defined('_JEXEC') or die;
@@ -19,13 +25,13 @@
 <div style="text-align: center;">
 	<?php
 	if ($this->item->prev != "") {
-		echo "<a href='" . $this->item->prev . "' class='button'>&lt; " . JText::_("TPL_POS_PREVIOUS_NOD") . "</a> ";
+		echo "<a href='" . $this->item->prev . "' class='button'>&lt; ".JText::_("TPL_POS_PREVIOUS_NOD")."</a> ";
 	}
 	$title = $this->escape($this->item->category_title);
 	echo "<a href='" . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . "' class='button'>" . $title . "</a> ";
 
 	if ($this->item->next != "") {
-		echo "<a href='" . $this->item->next . "' class='button'>" . JText::_("TPL_POS_NEXT_NOD") . " &gt;</a>";
+		echo "<a href='" . $this->item->next . "' class='button'>".JText::_("TPL_POS_NEXT_NOD")." &gt;</a>";
 	}
 	?>
 </div>

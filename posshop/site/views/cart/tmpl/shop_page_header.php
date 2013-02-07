@@ -1,5 +1,4 @@
 <ul id="main-tables-years">
-    <li style="width: 200px"><a href="<?php echo JURI::root(true)?>"><?php echo JText::_("COM_POSSHOP_BACK_TO_THE_MAIN")?></a></li>
     <div class="cb">&nbsp;</div>
 </ul>
                         <div id="main-tables">

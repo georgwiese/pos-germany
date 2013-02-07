@@ -6,11 +6,15 @@
 	jimport('joomla.application.component.view');
 
 	/**
-	 * Import view of PosShop component
+	 * HelloWorlds View
 	 */
 	class PosShopViewImport extends JView {
-
+		/**
+		 * HelloWorlds view display method
+		 * @return void
+		 */
 		function display($tpl = null) {
+			//JToolBarHelper::preferences('com_posshop');
 			parent::display($tpl);
 		}
 	}

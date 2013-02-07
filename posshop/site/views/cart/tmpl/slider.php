@@ -31,7 +31,7 @@
         event.onDOMReady(function () {
 		<?php
 			foreach ($sliders as $slider) {
-				echo "createSlider('" . $slider[0] . "', dom, event, lang, 0, 200, " . ($slider[1] / 100) . ", ". ($slider[2] / 100) . ", 25);\n";
+				echo "createSlider('" . $slider[0] . "', dom, event, lang, 0, 200, " . ($slider[1] / 100) . ", ". ($slider[2] / 100) . ", 1);\n";
 			}
 		?>
         })

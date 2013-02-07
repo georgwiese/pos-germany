@@ -6,11 +6,15 @@
 	jimport('joomla.application.component.controller');
 
 	/**
-	 * PosShop component main controller
+	 * Hello World Component Controller
 	 */
 	class PosShopController extends JController {
-
-		function display($cacheable = false, $urlparams = false) {
+		/**
+		 * display task
+		 *
+		 * @return void
+		 */
+		function display($cacheable = false) {
 			// set default view if not set
 			$vName = JRequest::getCmd('view', 'cart');
 			JRequest::setVar('view', $vName);
@@ -21,7 +25,7 @@
 				JHtml::stylesheet("com_posshop/slider.css", array(), true);
 
 			}
-			parent::display($cacheable, $urlparams);
+			parent::display($cacheable);
 
 		}
 
