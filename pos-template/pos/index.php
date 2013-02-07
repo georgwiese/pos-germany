@@ -15,7 +15,7 @@
 	JHtml::_('behavior.framework', true);
 
 // get params
-	$logo = ($this->params->get('logo') != null) ? $this->params->get('logo') : $this->baseurl . '/templates/' . $this->template . '/images/bg-header.jpg';
+	$logo = ($this->params->get('logo') != null) ? $this->params->get('logo') : $this->baseurl . '/templates/' . $this->template . '/images/bg-header.png';
 	$app = JFactory::getApplication();
 	$doc = JFactory::getDocument();
 	$templateparams = $app->getTemplate(true)->params;
@@ -37,8 +37,8 @@
 <div id="page-wrapper">
 	<div id="page">
 		<div id="header">
-			<img border=0 src="<?php echo $logo;?>" usemap="#flagmap"/>
-		</div>
+			<a href="<?php echo JURI::root(true)?>"><img border=0 src="<?php echo $logo;?>"/></a>
+		</div> 
 		<div id="mainmenu">
 			<jdoc:include type="modules" name="mainmenu"/>
 		</div>

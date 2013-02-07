@@ -6,7 +6,7 @@
 	require_once("pchart/pChart/pData.php");
 	require_once("pchart/pChart/pChart.php");
 
-	define("font", "FreeMono.ttf");
+	define("font", "arial.ttf");
 
 	class ChartHelper {
 

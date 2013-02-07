@@ -9,4 +9,6 @@
 </div>
 <div class="cb">&nbsp;</div>
 </div>
+<div class="cb">Daten erstellt auf Basis einer VGR nach COFOG. Datenquelle: Eurostat, 2010.</div>
+</div>
 <?php require("slider.php") ?>
