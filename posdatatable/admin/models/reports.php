@@ -31,7 +31,8 @@
 			$query->order("year");
 			$query->group("year");
 			$db->setQuery($query);
-			if (!$years = $db->loadColumn()) {
+			$years = $db->loadColumn();
+			if ($years === null) {
 				$this->setError($db->getErrorMsg(false));
 			}
 			return $years;

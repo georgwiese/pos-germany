@@ -13,7 +13,7 @@
 		static function plot_graph($table, $config, $total, $your) {
 
 			$dataSet = new pData;
-			$chart = new pChart(700, 330);
+			$chart = new pChart(950, 330);
 
 			$labels = array(JText::_("COM_POSSHOP_CURRENT_STATE_LABEL"), JText::_("COM_POSSHOP_YOUR_STATE_LABEL"));
 			$dataSet->addPoint($labels, "Name");
@@ -65,8 +65,8 @@
 			// Initialise the graph
 			$chart->setFontProperties(JPATH_COMPONENT . "/helpers/pchart/Fonts/".font, 8);
 			$chart->setGraphArea(50, 30, 350, 300);
-			$chart->drawFilledRoundedRectangle(5, 5, 697, 320, 5, 240, 240, 240);
-			$chart->drawRoundedRectangle(3, 3, 700, 320, 5, 230, 230, 230);
+			$chart->drawFilledRoundedRectangle(5, 5, 947, 320, 5, 240, 240, 240);
+			$chart->drawRoundedRectangle(3, 3, 950, 320, 5, 230, 230, 230);
 			$chart->drawGraphArea(255, 255, 255, TRUE);
 			$chart->drawScale($dataSet->GetData(), $dataSet->GetDataDescription(), SCALE_ADDALL, 150, 150, 150, TRUE, 0, 2, TRUE);
 			$chart->drawGrid(4, TRUE, 230, 230, 230, 50);

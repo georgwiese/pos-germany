@@ -1,4 +1,7 @@
 <?php
+	// No direct access to this file
+	defined('_JEXEC') or die('Restricted access');
+
 	require_once("PHPExcel/IOFactory.php");
 	PHPExcel_Settings::setCacheStorageMethod(PHPExcel_CachedObjectStorageFactory::cache_to_phpTemp, array(' memoryCacheSize ' => '20MB'));
 	PHPExcel_Settings::setLocale("sk-sk");

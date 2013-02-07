@@ -6,13 +6,10 @@
 	jimport('joomla.application.component.view');
 
 	/**
-	 * HelloWorlds View
+	 * Import view of PosDataTable component
 	 */
 	class PosDataTableViewImport extends JView {
-		/**
-		 * HelloWorlds view display method
-		 * @return void
-		 */
+
 		function display($tpl = null) {
 			JToolBarHelper::preferences('com_posdatatable');
 			parent::display($tpl);

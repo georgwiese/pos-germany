@@ -78,14 +78,16 @@ body {
 }
 
 #mainmenu ul li a span.text-menuitem {
-    margin-top: 3px;
+    /*margin-top: 0px;*/
 }
 
 #mainmenu ul li a span {
     display:            block;
     margin-left: 4px;
     margin-right: 4px;
-    padding-top: 3px;
+    /*padding-top: 3px;*/
+    line-height: 30px;
+    vertical-align: middle;
 }
 
 #mainmenu ul li.cyan a {
@@ -555,6 +557,11 @@ table.main-table td.main {
 table.main-table tr.header th {
     font-size:          10px;
     text-align:         right;
+}
+
+table.main-table tr.header th.centerize {
+    font-size:          10px;
+    text-align:         center;
 }
 
 #partners {
