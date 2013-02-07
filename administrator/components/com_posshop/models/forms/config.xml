@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+    <field name="imageurl" type="ShopMedia" directory="/"
+           hide_none="1" label="COM_YOURCOMPONENT_IMG_LABEL"
+           size="40" multiple="false" preview="true"
+           description="COM_YOURCOMPONENT_IMG_DESCRIPTION"/>
+
+</form>
