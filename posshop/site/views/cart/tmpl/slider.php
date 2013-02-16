@@ -8,7 +8,7 @@
             var realValue = dom.get('srv' + id);
             percentValue.innerHTML = offsetFromStart;
 
-            displayValue.innerHTML = Math.round(offsetFromStart * displayScale);
+            displayValue.innerHTML = (offsetFromStart * displayScale / 12).toFixed(1) + "0 " + "€ / Monat";//<?php JText::_("COM_POSSHOP_EURO_PER_MONTH")?>;
             realValue.value = Math.round(offsetFromStart * realScale);
             dom.get('slider-bg' + id).title = offsetFromStart + "%";
         });

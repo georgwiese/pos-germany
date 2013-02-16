@@ -13,6 +13,6 @@
         <span style="display:none;" id="sv<?php echo $tableIndex . "_" . $rowIndex?>">0</span>
         <span id="scv<?php echo $tableIndex . "_" . $rowIndex?>">0</span>
         <input type=hidden name="srv<?php echo $tableIndex . "_" . $rowIndex?>" id="srv<?php echo $tableIndex . "_" . $rowIndex?>" value="0"/>
-		<?php array_push($sliders, array($tableIndex . "_" . $rowIndex, $data[1], $data[4]));?>
+		<?php array_push($sliders, array($tableIndex . "_" . $rowIndex, $data[2], $data[4]));?>
     </td>
 </tr>
