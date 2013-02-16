@@ -1,6 +1,6 @@
 <script type="text/javascript">
     var sliders = [];
-    function createSlider(id, dom, event, lang, top, bottom, displayScale, realScale, keyIncrement) {
+    function createSlider(id, dom, event, lang, top, bottom, displayScale, displayUnit, realScale, keyIncrement) {
         slider = YAHOO.widget.Slider.getHorizSlider('slider-bg' + id, 'slider-thumb' + id, top, bottom, keyIncrement);
         slider.subscribe("change", function (offsetFromStart) {
             var percentValue = dom.get('sv' + id);
@@ -8,7 +8,7 @@
             var realValue = dom.get('srv' + id);
             percentValue.innerHTML = offsetFromStart;
 
-            displayValue.innerHTML = (offsetFromStart * displayScale / 12).toFixed(1) + "0 " + "€ / Monat";//<?php JText::_("COM_POSSHOP_EURO_PER_MONTH")?>;
+            displayValue.innerHTML = (offsetFromStart * displayScale / 12).toFixed(1) + "0 " + displayUnit;
             realValue.value = Math.round(offsetFromStart * realScale);
             dom.get('slider-bg' + id).title = offsetFromStart + "%";
         });
@@ -31,7 +31,7 @@
         event.onDOMReady(function () {
 		<?php
 			foreach ($sliders as $slider) {
-				echo "createSlider('" . $slider[0] . "', dom, event, lang, 0, 200, " . ($slider[1] / 100) . ", ". ($slider[2] / 100) . ", 1);\n";
+				echo "createSlider('" . $slider[0] . "', dom, event, lang, 0, 200, " . ($slider[1] / 100) . ", '". $slider[2] ."', ". ($slider[3] / 100) . ", 1);\n";
 			}
 		?>
         })
