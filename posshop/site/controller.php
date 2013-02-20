@@ -23,6 +23,7 @@
 				JHtml::script('com_posshop/dragdrop-min.js', false, true);
 				JHtml::script('com_posshop/slider-min.js', false, true);
 				JHtml::stylesheet("com_posshop/slider.css", array(), true);
+				JHtml::stylesheet("com_posshop/tooltip.css", array(), true);
 
 			}
 			parent::display($cacheable);

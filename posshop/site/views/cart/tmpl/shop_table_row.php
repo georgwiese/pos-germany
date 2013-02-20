@@ -1,5 +1,9 @@
 <tr>
-    <td class='main'><?php echo $data[0]?></td>
+    <td class='main'><?php
+    // Following http://docs.joomla.org/How_to_add_tooltips_to_your_Joomla!_website
+    echo JHTML::tooltip('This is a tooltip attached to text', '', 
+                    '', $data[0]);
+                    ?></td>
     <td><?php echo round($data[1])?></td>
     <td><?php echo $data[2]?></td>
     <td><?php echo $data[3]?></td>

@@ -1,7 +1,9 @@
+
 <?php
 
 	// No direct access to this file
 	defined('_JEXEC') or die('Restricted access');
+	JHTML::_('behavior.tooltip');
 
 	/**
 	 * Created by JetBrains PhpStorm.
