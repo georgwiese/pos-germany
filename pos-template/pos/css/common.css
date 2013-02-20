@@ -39,6 +39,11 @@ body {
     background-image:   url(../images/bg-mainmenu.png);
     height:             34px;
     margin-bottom:      1px;
+    width:              100%;
+}
+
+#mainmenu  ul li.item11 {
+    float:              right;
 }
 
 #mainmenu ul {
