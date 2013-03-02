@@ -1,33 +1,20 @@
 <?php
-	// No direct access to this file
+// No direct access to this file
 	defined('_JEXEC') or die('Restricted access');
 
-	// import Joomla modelitem library
+// import Joomla modelitem library
 	jimport('joomla.application.component.modellist');
 
 	require_once(JPATH_COMPONENT_SITE . '/helpers/ConfigurationHelper.php');
 
 	/**
-	 * HelloWorld Model
+	 * Table model of PosDataTable component
 	 */
 	class PosDataTableModelTable extends JModelList {
 
 		private $tableInfo;
 
-
-		/**
-		 * Method to auto-populate the model state.
-		 *
-		 * This method should only be called once per instantiation and is designed
-		 * to be called on the first call to the getState() method unless the model
-		 * configuration flag to ignore the request is set.
-		 *
-		 * Note. Calling getState in this method will result in recursion.
-		 *
-		 * @return    void
-		 * @since    1.6
-		 */
-		protected function populateState() {
+		protected function populateState($ordering = null, $direction = null) {
 			$menuItemAlias = JRequest::getString("item");
 			if (!empty($menuItemAlias)) {
 				$menuItem = JFactory::getApplication()->getMenu()->getItems('alias', $menuItemAlias, true);
@@ -36,18 +23,9 @@
 			}
 			$year = JRequest::getInt("year", ConfigurationHelper::getCurrentYear());
 			$this->setState("year", $year);
-			parent::populateState();
+			parent::populateState($ordering, $direction);
 		}
 
-		/**
-		 * Returns a reference to the a Table object, always creating it.
-		 *
-		 * @param    type    The table type to instantiate
-		 * @param    string    A prefix for the table class name. Optional.
-		 * @param    array    Configuration array for model. Optional.
-		 * @return    JTable    A database object
-		 * @since    1.6
-		 */
 		public function getTable($type = 'PosDataTable', $prefix = 'PosDataTable', $config = array()) {
 			return JTable::getInstance($type, $prefix, $config);
 		}
@@ -59,15 +37,18 @@
 		public function getTableInfo() {
 			$tableName = $this->getState('tableName');
 			$year = $this->getState('year');
+			if (isset($year)) {
+				$db = $this->getDbo();
+				$db->setQuery($db->getQuery(true)
+					->select("table_id, name, year, x1_axis, x2_axis, round, yearly_change")
+					->from("#__pos_data_table_info as p")
+					->where("name = '" . $tableName . "' AND year IN (0, " . $year . ")"));
 
-			$db = $this->getDbo();
-			$db->setQuery($db->getQuery(true)
-				->select("table_id, name, year, x1_axis, x2_axis, round, yearly_change")
-				->from("#__pos_data_table_info as p")
-				->where("name = '" . $tableName . "' AND year IN (0, " . $year . ")"));
-
-			if (!$tableInfo = $db->loadObject()) {
-				$this->setError($db->getErrorMsg(false));
+				if (!$tableInfo = $db->loadObject()) {
+					$this->setError("No data found for year: " . $year . " and table: " . $tableName);
+				}
+			} else {
+				$this->setError("Current year not specified, check Options in Pos Data Table component.");
 			}
 
 			$this->tableInfo = $tableInfo;

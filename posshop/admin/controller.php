@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
  
 /**
- * General Controller of HelloWorld component
+ * General Controller of PosShop component
  */
 class PosShopController extends JController
 {
@@ -15,16 +15,16 @@ class PosShopController extends JController
 	 *
 	 * @return void
 	 */
-	function display($cachable = false) 
+	function display($cachable = false, $urlparams = false)
 	{
 		self::addSubmenu(JRequest::getCmd('view', 'import'));
 		// set default view if not set
 		JRequest::setVar('view', JRequest::getCmd('view', 'import'));
 		JHtml::script('com_posshop/jscolor.js', false, true);
 		JHtml::stylesheet('com_posshop/admin.css', array(), true);
-
+		JToolBarHelper::title("PoS Shop");
 		// call parent behavior
-		parent::display($cachable);
+		parent::display($cachable, $urlparams);
  
 
 	}

@@ -6,7 +6,7 @@
 	<author>Martin Maliska</author>
 	<authorEmail>martin.maliska@gmail.com</authorEmail>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>2.5.0</version>
+	<version>0.0.2</version>
 	<description>TPL_POS_XML_DESCRIPTION</description>
 
 	<files>

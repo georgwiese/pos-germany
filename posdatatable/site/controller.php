@@ -6,20 +6,16 @@
 	jimport('joomla.application.component.controller');
 
 	/**
-	 * Hello World Component Controller
+	 * PosDataTable component main controller
 	 */
 	class PosDataTableController extends JController {
-		/**
-		 * display task
-		 *
-		 * @return void
-		 */
-		function display($cacheable = false) {
+
+		function display($cacheable = false, $urlparams = false) {
 			// set default view if not set
 			$vName = JRequest::getCmd('view', 'summary');
 			JRequest::setVar('view', $vName);
 			JHtml::script('com_posdatatable/utils.js', false, true);
-			parent::display($cacheable);
+			parent::display($cacheable, $urlparams);
 
 		}
 

@@ -7,7 +7,7 @@
 	require_once(JPATH_COMPONENT . '/helpers/ReportsHelper.php');
 
 	/**
-	 * HelloWorlds View
+	 * Info view of PosDataTable component
 	 */
 	class PosDataTableViewInfo extends JView {
 
@@ -25,17 +25,17 @@
 		private function populateView(PosDataTableModelInfo $model) {
 			$this->tableNames = $model->getTableNames();
 			$this->year = $this->get("year");
-			$this->item = $this->get("item");
-			$this->tableInfo = $model->getTableInfo();
-			// Check for errors.
-			if (count($errors = $this->get('Errors')))
-			{
-				JError::raiseError(500, implode('<br />', $errors));
-			}
-			$this->tableData = $model->getTableData();
-			if (count($errors = $this->get('Errors')))
-			{
-				JError::raiseError(500, implode('<br />', $errors));
+			if ($this->year != null) {
+				$this->item = $this->get("item");
+				$this->tableInfo = $model->getTableInfo();
+				// Check for errors.
+				if (count($errors = $this->get('Errors'))) {
+					JError::raiseError(500, implode('<br />', $errors));
+				}
+				$this->tableData = $model->getTableData();
+				if (count($errors = $this->get('Errors'))) {
+					JError::raiseError(500, implode('<br />', $errors));
+				}
 			}
 
 		}
