@@ -20,7 +20,7 @@
 																<table cellpadding='4' cellspacing='0' border='0'
 																	   class='main-table' width='730'>
                                                                     <col width="300"/><col width="50"/><col width="50"/><col width="50"/><col width="180"/>
-																	<tr class='header'>
+																	<tr class='header'<?php echo isset($data[5]) ? " title='".$data[5]."'" : ""; ?>>
 																		<th><h2><?php echo $tableHeader[0]?></h2></th>
 																		<th><?php echo $tableHeader[1]?></th>
 																		<th><?php echo $tableHeader[2]?></th>

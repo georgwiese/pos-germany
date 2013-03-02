@@ -27,8 +27,8 @@
 		private $actualDataColumns;
 		private $actualHeaderRow;
 
-		private static $dataColumns = array("B", "E", "F", "G", "H");
-		private static $dataColumns2ndLang = array("D", "E", "F", "G", "H");
+		private static $dataColumns = array("B", "E", "F", "G", "H", "I");
+		private static $dataColumns2ndLang = array("D", "E", "F", "G", "H", "J");
 		private static $tableNameColumn = "A";
 		private static $tableNameColumn2ndLang = "C";
 		private static $headerColumns = array("E", "F", "G");
