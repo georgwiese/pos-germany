@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
  
 /**
- * General Controller of HelloWorld component
+ * General Controller of PosDataTable component
  */
 class PosDataTableController extends JController
 {
@@ -15,15 +15,16 @@ class PosDataTableController extends JController
 	 *
 	 * @return void
 	 */
-	function display($cachable = false) 
+	function display($cachable = false, $urlparams = false)
 	{
 		self::addSubmenu(JRequest::getCmd('view', 'import'));
 		// set default view if not set
 		JRequest::setVar('view', JRequest::getCmd('view', 'import'));
 		JHtml::script('com_posdatatable/utils.js', false, true);
+		JToolBarHelper::title("PoS Data Table");
 
 		// call parent behavior
-		parent::display($cachable);
+		parent::display($cachable, $urlparams);
  
 
 	}

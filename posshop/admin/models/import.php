@@ -7,7 +7,7 @@
 	require("import/ShopTableDao.php");
 
 	/**
-	 * HelloWorld Model
+	 * Import model of PosShop component
 	 */
 	class PosShopModelImport extends JModel {
 

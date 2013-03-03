@@ -6,15 +6,11 @@
 	jimport('joomla.application.component.controller');
 
 	/**
-	 * Hello World Component Controller
+	 * PosShop component main controller
 	 */
 	class PosShopController extends JController {
-		/**
-		 * display task
-		 *
-		 * @return void
-		 */
-		function display($cacheable = false) {
+
+		function display($cacheable = false, $urlparams = false) {
 			// set default view if not set
 			$vName = JRequest::getCmd('view', 'cart');
 			JRequest::setVar('view', $vName);
@@ -26,7 +22,7 @@
 				JHtml::stylesheet("com_posshop/tooltip.css", array(), true);
 
 			}
-			parent::display($cacheable);
+			parent::display($cacheable, $urlparams);
 
 		}
 

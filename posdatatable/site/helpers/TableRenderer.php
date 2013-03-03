@@ -42,7 +42,10 @@
 				$controlSequenceIndex = self::getControlSequenceIndex($rowData[0]);
 				$controlSequence = substr(ltrim($rowData[0]), $controlSequenceIndex, 2);
 
-				$tableDescription = self::parseTableDescription($controlSequence, $row, $rowData, $controlSequenceIndex);
+				$candidateTableDescription = self::parseTableDescription($controlSequence, $row, $rowData, $controlSequenceIndex);
+				if ($candidateTableDescription != null) {
+					$tableDescription = $candidateTableDescription;
+				}
 
 				$wasSumRow = $wasSumRow | $controlSequence == "#n";
 				$wasSumRow = self::renderTableHeader($row, sizeof($tableData), $rowData, $keepHeader, $compactMode,
@@ -62,7 +65,7 @@
 				$tableDescription = substr($rowData[0], $controlSequenceIndex + 2);
 				return $tableDescription;
 			}
-			return JText::_('COM_POSDATATABLE_DEFAULT_TABLE_DESCRIPTION');
+			return null;
 		}
 
 		public static function renderTableDescription($tableNumber, $tableDescription) {
@@ -160,7 +163,7 @@
 			$keepHeader = false;
 
 			if ($compactMode && ($tableInfo->yearly_change > -1)) unset($rowData[sizeof($rowData) - 1]);
-			for ($i = 0; $i < sizeof($rowData) - 1; $i++) {
+			for ($i = 0; $i < sizeof($rowData); $i++) {
 				$cell = new Cell($rowData[$i], $graphLink);
 
 				if (self::isFirstColumn($i)) {
