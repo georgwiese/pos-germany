@@ -4,7 +4,7 @@
 
 	require_once("compare.php");
 	/**
-	 * HelloWorld Model
+	 * Chart model of PosDataTable component
 	 */
 	class PosDataTableModelChart extends PosDataTableModelCompare {
 	}

@@ -1,4 +1,5 @@
 <?php
+
 // No direct access to this file
 	defined('_JEXEC') or die('Restricted access');
 
@@ -8,7 +9,7 @@
 	require("import/TableRowDao.php");
 
 	/**
-	 * HelloWorld Model
+	 * PosDataTableModelImport model
 	 */
 	class PosDataTableModelImport extends JModel {
 

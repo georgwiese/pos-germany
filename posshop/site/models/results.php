@@ -3,14 +3,14 @@
 	defined('_JEXEC') or die('Restricted access');
 
 	// import Joomla modelitem library
-	jimport('joomla.application.component.modellist');
+	jimport('joomla.application.component.model');
 
 	require_once(JPATH_COMPONENT_SITE . '/models/results/CartDao.php');
 
 	/**
-	 * HelloWorld Model
+	 * Results model of PosShop component
 	 */
-	class PosShopModelResults extends JModelList {
+	class PosShopModelResults extends JModel {
 
 		static $fieldPrefix = "srv";
 		static $fieldPrefixLength = 3;

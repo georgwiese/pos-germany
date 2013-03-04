@@ -1,4 +1,4 @@
-<tr>
+<tr <?php echo isset($data[5]) ? "title='".$data[5]."'" : ""; ?>>
     <td class='main'><?php echo $data[0]?></td>
     <td><?php echo round($data[1])?></td>
     <td><?php echo $data[2]?></td>

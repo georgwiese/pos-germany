@@ -39,6 +39,11 @@ body {
     background-image:   url(../images/bg-mainmenu.png);
     height:             34px;
     margin-bottom:      1px;
+    width:              100%;
+}
+
+#mainmenu  ul li.item11 {
+    float:              right;
 }
 
 #mainmenu ul {
@@ -85,7 +90,9 @@ body {
     display:            block;
     margin-left: 4px;
     margin-right: 4px;
-    padding-top: 3px;
+    /*padding-top: 3px;*/
+    line-height: 30px;
+    vertical-align: middle;
 }
 
 #mainmenu ul li.cyan a {

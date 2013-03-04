@@ -7,7 +7,7 @@
 	JFormHelper::loadFieldClass('list');
 
 	/**
-	 * HelloWorld Form Field class for the HelloWorld component
+	 * TableName Form Field class for the PosDataTable component
 	 */
 	class JFormFieldTableName extends JFormFieldList {
 		/**

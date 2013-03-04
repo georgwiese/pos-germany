@@ -8,7 +8,7 @@
 	require_once(JPATH_COMPONENT_SITE . '/helpers/ConfigurationHelper.php');
 
 	/**
-	 * HelloWorld Model
+	 * Summary model of PosDataTable component
 	 */
 	class PosDataTableModelSummary extends PosDataTableModelTable {
 
@@ -27,10 +27,10 @@
 		 * @return    void
 		 * @since    1.6
 		 */
-		protected function populateState() {
+		protected function populateState($ordering = null, $direction = null) {
 			$this->setState('year', JRequest::getInt('year', ConfigurationHelper::getCurrentYear()));
 			$this->setState("tableNames", ConfigurationHelper::getSummaryPageTables());
-			parent::populateState();
+			parent::populateState($ordering, $direction);
 		}
 
 		/**

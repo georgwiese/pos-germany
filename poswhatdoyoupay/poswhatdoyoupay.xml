@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+
+    <name>com_poswhatdoyoupay</name>
+    <!-- The following elements are optional and free of formatting conttraints -->
+    <creationDate>2012-12-04</creationDate>
+    <author>Martin Maliska</author>
+    <authorEmail>martin.maliska@gmail.com</authorEmail>
+    <!--  The version string is recorded in the components table -->
+    <version>0.0.1</version>
+    <!-- The description is optional and defaults to the name -->
+    <description>Pos What Do You Pay component</description>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>poswhatdoyoupay.php</filename>
+        <filename>controller.php</filename>
+        <folder>helpers</folder>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>language</folder>
+    </files>
+
+    <media destination="com_poswhatdoyoupay" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB.com_poswhatdoyoupay.ini</language>
+        <language tag="ka-GE">language/ka-GE.com_poswhatdoyoupay.ini</language>
+    </languages>
+
+    <administration>
+        <menu>com_poswhatdoyoupay</menu>
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <!-- SQL files section -->
+            <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>poswhatdoyoupay.php</filename>
+            <filename>controller.php</filename>
+            <folder>language</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB.com_poswhatdoyoupay.sys.ini</language>
+            <language tag="en-GB">language/en-GB.com_poswhatdoyoupay.ini</language>
+        </languages>
+        
+    </administration>
+
+</extension>

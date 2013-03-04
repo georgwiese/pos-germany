@@ -7,34 +7,32 @@
 	require_once(JPATH_COMPONENT . '/helpers/ReportsHelper.php');
 
 	/**
-	 * HelloWorlds View
+	 * Reports view of PosDataTable component
 	 */
 	class PosDataTableViewReports extends JView {
 
 		private $tableCountReport;
 		private $tableYears;
 		private $annualTablesPresent;
-		/**
-		 * HelloWorlds view display method
-		 * @return void
-		 */
+
 		function display($tpl = null) {
 			$years = $this->getModel()->getYearList();
-			if (count($errors = $this->get('Errors')))
-			{
+			if (count($errors = $this->get('Errors'))) {
 				JError::raiseError(500, implode('<br />', $errors));
 				return false;
 			}
-			$years = $this->detectAnnualTables($years);
-			$this->tableYears = $years;
+			if (sizeof($years) > 0) {
+				$years = $this->detectAnnualTables($years);
+				$this->tableYears = $years;
 
-			$this->tableCountReport = $this->getModel()->getTableCountReport($years);
-			if (count($errors = $this->get('Errors')))
-			{
-				JError::raiseError(500, implode('<br />', $errors));
-				return false;
+				$this->tableCountReport = $this->getModel()->getTableCountReport($years);
+				if (count($errors = $this->get('Errors'))) {
+					JError::raiseError(500, implode('<br />', $errors));
+					return false;
+				}
+			} else {
+				$this->tableYears = $years;
 			}
-
 			parent::display($tpl);
 		}
 
