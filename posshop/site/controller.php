@@ -18,7 +18,11 @@
 				JHtml::script('com_posshop/yahoo-dom-event.js', false, true);
 				JHtml::script('com_posshop/dragdrop-min.js', false, true);
 				JHtml::script('com_posshop/slider-min.js', false, true);
-				JHtml::stylesheet("com_posshop/slider.css", array(), true);
+				JHtml::stylesheet("com_posshop/buttonsets.css", array(), true);
+				// JQuery UI
+				JHtml::stylesheet("http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css", array(), true);
+				JHtml::script('http://code.jquery.com/jquery-1.9.1.min.js', false, true);
+				JHtml::script('http://code.jquery.com/ui/1.10.1/jquery-ui.min.js', false, true);
 
 			}
 			parent::display($cacheable, $urlparams);

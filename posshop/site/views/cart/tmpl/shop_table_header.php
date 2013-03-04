@@ -22,8 +22,8 @@
                                                                     <col width="300"/><col width="50"/><col width="50"/><col width="50"/><col width="180"/>
 																	<tr class='header'<?php echo isset($data[5]) ? " title='".$data[5]."'" : ""; ?>>
 																		<th><h2><?php echo $tableHeader[0]?></h2></th>
-																		<th class="centerize"><?php echo $tableHeader[1]?></th>
+																		<!--<th class="centerize"><?php echo $tableHeader[1]?></th>
 																		<th class="centerize"><?php echo $tableHeader[2]?></th>
-																		<th class="centerize"><?php echo $tableHeader[3]?></th>
-																		<th><img src='<?php echo JURI::root(true)."/media/com_posshop/images/cart.png";?>'/></th>
+																		<th class="centerize"><?php echo $tableHeader[3]?></th>-->
+																		<th style="width:240px"><img src='<?php echo JURI::root(true)."/media/com_posshop/images/cart.png";?>'/></th>
 																	</tr>

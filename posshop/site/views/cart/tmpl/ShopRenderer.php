@@ -18,7 +18,7 @@
 			$this->startPage();
 			$table = $shopDao->loadShopItems();
 			$config = $shopDao->loadTableConfig();
-			$sliders = array();
+			$buttonsets = array();
 			$previousTableIndex = 0;
 			foreach ($table as $row) {
 				$tableIndex = $row->table_id;
@@ -30,19 +30,19 @@
 					}
 					$this->startTable($config[$tableIndex]->picture, $data);
 				} else {
-					$this->renderRow($data, $tableIndex, $rowIndex, $sliders);
+					$this->renderRow($data, $tableIndex, $rowIndex, $buttonsets);
 				}
 				$previousTableIndex = $tableIndex;
 			}
 			if (sizeof($table) >0) $this->endTable($previousTableIndex);
-			$this->endPage($sliders, sizeof($table) > 0);
+			$this->endPage($buttonsets, sizeof($table) > 0);
 		}
 
 		private function startTable($tableImage, $tableHeader) {
 			require("shop_table_header.php");
 		}
 
-		private function renderRow($data, $tableIndex, $rowIndex, &$sliders) {
+		private function renderRow($data, $tableIndex, $rowIndex, &$buttonsets) {
 			require("shop_table_row.php");
 		}
 
@@ -54,7 +54,7 @@
 			require("shop_page_header.php");
 		}
 
-		private function endPage(&$sliders, $submitEnabled) {
+		private function endPage(&$buttonsets, $submitEnabled) {
 			require("shop_page_footer.php");
 		}
 

@@ -11,4 +11,5 @@
 </div>
 <div class="cb">Daten erstellt auf Basis einer VGR nach COFOG. Datenquelle: Eurostat, 2010.</div>
 </div>
-<?php require("slider.php") ?>
+<!--<?php require("slider.php") ?>-->
+<?php require("buttonset.php") ?>
