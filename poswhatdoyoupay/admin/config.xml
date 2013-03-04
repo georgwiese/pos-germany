@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="datatable_configs" label="COM_POSWHATDOYOUPAY_SETTINGS_LABEL">
+        <field name="useTemplate" type="list" label="COM_POSWHATDOYOUPAY_TEMPLATE_LABEL">
+            <option value="">COM_POSWHATDOYOUPAY_TEMPLATE_FIELD_VALUE_SK</option>
+            <option value="ge">COM_POSWHATDOYOUPAY_TEMPLATE_FIELD_VALUE_GE</option>
+            <option value="de">COM_POSWHATDOYOUPAY_TEMPLATE_FIELD_VALUE_DE</option>
+            <option value="ua">COM_POSWHATDOYOUPAY_TEMPLATE_FIELD_VALUE_UA</option>
+        </field>
+    </fieldset>
+</config>
