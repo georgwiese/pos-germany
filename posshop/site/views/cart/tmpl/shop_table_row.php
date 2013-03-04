@@ -1,5 +1,7 @@
-<tr <?php echo isset($data[5]) ? "title='".$data[5]."'" : ""; ?>>
-    <td class='main'><?php echo $data[0]?></td>
+<tr>
+    <td class='main'><?php
+    // Following http://docs.joomla.org/How_to_add_tooltips_to_your_Joomla!_website
+    echo isset($data[5])? JHTML::tooltip($data[5], '', '', $data[0]) : $data[0]; ?></td>
     <td><?php echo round($data[1])?></td>
     <td><?php echo $data[2]?></td>
     <td><?php echo $data[3]?></td>
